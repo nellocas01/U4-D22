@@ -33,6 +33,7 @@ public class UtenteService {
 		found.setName(u.getName());
 		found.setSurname(u.getSurname());
 		found.setEmail(u.getEmail());
+		found.setUtenti(u.getUtenti());
 
 		return utenteRepo.save(found);
 	}

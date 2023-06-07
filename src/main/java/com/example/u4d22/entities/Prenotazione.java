@@ -1,10 +1,12 @@
 package com.example.u4d22.entities;
 
+import java.util.Date;
 import java.util.UUID;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -17,11 +19,13 @@ public class Prenotazione {
 	@Id
 	@GeneratedValue
 	private UUID id;
+	@ManyToOne
 	private Utente idUtente;
+	@ManyToOne
 	private Postazione idPostazione;
-	private Data data;
+	private Date data;
 
-	public Prenotazione(Utente idUtente, Postazione idPostazione, Data data) {
+	public Prenotazione(Utente idUtente, Postazione idPostazione, Date data) {
 		super();
 		this.idUtente = idUtente;
 		this.idPostazione = idPostazione;
